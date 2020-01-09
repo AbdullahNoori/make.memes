@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="container">
+    <div class="row justify-content-center p-5">
+        <a href="/"> Back to Home</a>
+    </div>
+
+<div>
+    <div class="row"  >  
+        <div class="col-lg">
+            <div class="row">
+                <div class="card">
+                    <div class="card-title  text-center justify-content-center p5" >
+                        <h1 class="card-title">{{ vacation.title }}
+                        <p class="card-body">{{ vacation.description }}</p>
+
+                        <a class="btn btn-primary btn-block w-50 m-auto mb-5" href="/vacations/{{vacation._id}}/edit">Edit</a>
+                        <form class="mt-5" method='POST' action='/vacations/{{vacation._id}}/delete'>
+                            <input class="" type='hidden' name='_method' value='DELETE'>
+                            <button class='btn btn-danger btn-block w-50 m-auto' type='submit'>Delete</button>
+                        </form>
+                    
+                    </div>
+                    <div class="row pd-5 mt-20" >
+                        <div class="col-md">
+                        
+                            <div id="mdb-lightbox-ui"></div>
+                        
+                            <div class="mdb-lightbox no-margin">
+                                
+                                {% for image in vacation.images %}
+                                    <!-- <figure class="col-md-4"> -->
+                                        <img alt="{{vacation.title}}" src="{{image}}" class="img-fluid" width="100%" height="100%">
+                                    <!-- </figure> -->
+                                {% endfor %}
+                        
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>  
+</div>
+
+{% endblock %}

@@ -1,0 +1,20 @@
+<fieldset>
+        <legend>{{ title }}</legend>
+
+        <!-- TITLE -->
+        <p>
+            <label for='meme-title'>Title</label><br>
+            <input id='meme-title' type='text' name='title' value='{{ meme.title }}'/>
+        </p>
+        <!-- DESCRIPTION -->
+        <p>
+          <label for='description'>Description</label><br>
+          <input id='description' type='text' name='description' value='{{ meme.description }}' />
+        </p>
+        <!-- IMAGES ID -->
+        <p>
+          <label for='meme_list-images-ids'> Images </label><br>
+          <p>Add image urls, Separate with a newline.</p>
+          <textarea id='7G9pTbBerB0' name='images' rows='10'>{{ ", \n".join(meme.images) }}</textarea>
+        </p>
+    </fieldset>

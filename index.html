@@ -18,15 +18,15 @@ memes<!-- templates/index.html -->
             <!-- The slideshow -->
             <div class="carousel-inner">
                 <div class="carousel-item active">
-                    <img src="https://i2.wp.com/globalmunchkins.com/wp-content/uploads/2019/06/Joy-Meets-Bliss-OU2.jpg?resize=1050%2C508&ssl=1" class="img-responsive center-block wrapper">
+                    <!-- <img src="https://i2.wp.com/globalmunchkins.com/wp-content/uploads/2019/06/Joy-Meets-Bliss-OU2.jpg?resize=1050%2C508&ssl=1" class="img-responsive center-block wrapper"> -->
                 </div>
                 <div class="carousel-item">
-                    <img src="https://www.ncl.com/sites/default/files/Joy%20in%20Alaska.jpg" class="img-responsive center-block wrapper">
+                    <!-- <img src="https://www.ncl.com/sites/default/files/Joy%20in%20Alaska.jpg" class="img-responsive center-block wrapper"> -->
                 </div>
                 <div class="carousel-item">
                   <!-- #credits: Carnival -->
-                    <img src="https://www.carnival.com/~/media/Images/Ships/VS/carnival-vista-ship-aerial.jpg" width="100%" height="auto" >
-                </div>
+                    <!-- <img src="https://www.carnival.com/~/media/Images/Ships/VS/carnival-vista-ship-aerial.jpg" width="100%" height="auto" >
+                </div> -->
             </div>
             <!-- Left and right controls -->
             <a class="carousel-control-prev" href="#demo" data-slide="prev">
@@ -51,11 +51,12 @@ memes<!-- templates/index.html -->
                       <div class="card-body">
                         <h4 class="card-title">
                           <a href="">{{ meme.title }}</a>
+
                         </h4>
                         <p class="card-text">{{ meme.description }}</p>
                       </div>
                       <div class="card-footer">
-                        <a class="btn btn-primary btn-lg float-right" href="/memes/{{ vacation._id }}">View Details</a>
+                        <a class="btn btn-primary btn-lg float-right" href="/memes/{{ meme._id }}">View Details</a>
                       </div>
                     </div>
                   </div>
