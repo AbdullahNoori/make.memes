@@ -1,73 +1,63 @@
-memes<!-- templates/index.html -->
-{% extends 'base.html' %}
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title> Meme Maker</title>
+    <link rel="stylesheet" href="../static/make-meme.css">
 
-{% block content %}
- <!-- Slide show -->
- <div class="container">
-    <div class="row">
-        <!-- Slide show -->
-        <div id="demo" class="carousel slide" data-ride="carousel">
+    </head>
+    <nav>
+        <li class="nav-item" >
+      <a class="nav-link" href="/" style="color:White;">Home </a>
+        </li>
+        <li class="nav-item">
+      <a class="nav-link" style="color:White;" href="/meme/new">New Cruises</a>
+        </li>
 
-            <!-- Indicators -->
-            <ul class="carousel-indicators">
-                <li data-target="#demo" data-slide-to="0" class="active"></li>
-                <li data-target="#demo" data-slide-to="1"></li>
-                <li data-target="#demo" data-slide-to="2"></li>
-            </ul>
+  </ul>
+</nav>
 
-            <!-- The slideshow -->
-            <div class="carousel-inner">
-                <div class="carousel-item active">
-                    <!-- <img src="https://i2.wp.com/globalmunchkins.com/wp-content/uploads/2019/06/Joy-Meets-Bliss-OU2.jpg?resize=1050%2C508&ssl=1" class="img-responsive center-block wrapper"> -->
-                </div>
-                <div class="carousel-item">
-                    <!-- <img src="https://www.ncl.com/sites/default/files/Joy%20in%20Alaska.jpg" class="img-responsive center-block wrapper"> -->
-                </div>
-                <div class="carousel-item">
-                  <!-- #credits: Carnival -->
-                    <!-- <img src="https://www.carnival.com/~/media/Images/Ships/VS/carnival-vista-ship-aerial.jpg" width="100%" height="auto" >
-                </div> -->
-            </div>
-            <!-- Left and right controls -->
-            <a class="carousel-control-prev" href="#demo" data-slide="prev">
-                <span class="carousel-control-prev-icon"></span>
-            </a>
-            <a class="carousel-control-next" href="#demo" data-slide="next">
-                <span class="carousel-control-next-icon"></span>
-            </a>
-        </div>
-        <!-- end slide show -->
-    </div>
-</div>
-<!-- end Slide show -->
-    <div class="row mt-20">
-        <div class="col-lg">
-            <div class="row">
-              {% if memes %}
-                {% for meme in memes %}
-                  <div class="col-lg-4 col-md-6 mb-4 pd-5 mt-20">
-                    <div class="card h-100">
-                      <img src="{{meme.images[0]}}" alt="" width="100%" height="250px">
-                      <div class="card-body">
-                        <h4 class="card-title">
-                          <a href="">{{ meme.title }}</a>
+    <body style="background-color:  hsl(325, 97%, 74%)">
+        <ul class="navbar-nav">
 
-                        </h4>
-                        <p class="card-text">{{ meme.description }}</p>
-                      </div>
-                      <div class="card-footer">
-                        <a class="btn btn-primary btn-lg float-right" href="/memes/{{ meme._id }}">View Details</a>
-                      </div>
-                    </div>
-                  </div>
-                {% endfor %}
-                {% endif %}
-            </div>
-            <!-- /.row -->
-        </div>
-        <!-- /.col-lg-9 -->
-    </div>
-    <!-- /.row -->
-</div>
-<!-- /.container -->
-{% endblock %}
+    </body>
+        <center>
+            <form action="/sendImageBack" method="post">
+                            <!-- input div -->
+                    <div class="inputDiv">
+                            <p>
+                                <textarea id="top=text" name="first"></textarea>
+                                    Text size: <input type="range" id="top-text-size-input" position="absolute" >
+
+                            </p>
+                            <P>
+                                <textarea id="bottom-text" name="second"></textarea>
+                                    Text size: <input type="range" id="bottom-text-size-input" position="absolute" >
+                            </p>
+                            <p>
+                                <input type="file" id="image-input" accept="image/*" name="memeImage">
+                             <!-- div Rap -->
+                             <div id="DivdownloadButton">
+
+                                <input type="submit" value="Submit">
+                              </div>
+                              <!-- div ends -->
+                            </div>
+                        </div>
+            </form>
+
+        </p>
+        <p>
+
+            <img src="../static/{{ transferImage }}"/>
+            <p position="absolute"> First: {{first}} </p>
+            <p> Second: {{second}} </p>
+
+            </p>
+        </p>
+        <p>
+            <canvas id="meme-canvas"></canvas>
+        </p>
+        <script src="make-meme.js"></script>
+    </body>
+</html>

@@ -1,0 +1,32 @@
+:root.fixed {
+
+    font-family: Helvetica;
+    font-size: 24px;
+
+}
+* {
+    font: inherit;
+}
+
+#meme-canvas {
+    width: 300px
+}
+
+
+body {
+    background-color: #000000;
+    padding: 0px;
+    margin: 0px;
+#gradient
+/* {
+width: 100%;
+height: 800px;
+padding: 0px;
+margin: 0px; */
+}
+/*
+    background-color: : rgb(194, 245, 174);
+    memeImage: center;
+    topText: relative;
+    bottomText:fixed;
+} */
