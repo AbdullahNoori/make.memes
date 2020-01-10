@@ -4,9 +4,10 @@ This is a simple applicatio that allows users to design memes to be shared on th
 
 Files included:
 
-index.html
-meme.js
-meme.css
+index.html,
+meme.js,
+meme.css,
 app.py
 
 
+https://d.newsweek.com/en/full/1176971/obesity-meme.png
